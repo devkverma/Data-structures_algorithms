@@ -14,6 +14,7 @@ class Solution:
             head = head.next
         else:
             print(head.val,end=']')
+            print()
 
     def append(self,linked_list,val):
         head = linked_list
@@ -42,11 +43,22 @@ class Solution:
         else:
             head.next = address
             return
-
+        
+    def checkCircular(self,linked_list):
+        head = linked_list
+        stack = []
+        while head.next:
+            if head in stack:
+                return True
+            stack.append(head)
+            head = head.next
+        return False
         
         
 
 sol = Solution()
+
+
 
 
 
