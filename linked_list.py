@@ -6,9 +6,11 @@ class ListNode:
 class Solution:
     def print(self,linked_list):
         head = linked_list
+        stack = []
         print('[',end= '')
-        while head.next:
+        while head.next  and head not in stack:
             print(head.val,end=',')
+            stack.append(head)
             head = head.next
         else:
             print(head.val,end=']')
@@ -22,12 +24,30 @@ class Solution:
             head = head.next
         head.next = ListNode(val)
         return
+    
+    def connectNode(self,linked_list,index):
+        head = linked_list
+        if head.next is None:
+            raise IndexError('List has only one element')
+            return
+        i = 0
+        address = None
+        while head.next:
+            if i == index:
+                address = head
+            head = head.next
+            i += 1
+        if address == None:
+            raise IndexError('index out of range')
+        else:
+            head.next = address
+            return
+
+        
         
 
 sol = Solution()
 
-l1 = ListNode()
-sol.append(l1,5)
-sol.print(l1)
+
 
 
