@@ -3,7 +3,9 @@ class ListNode:
         self.val = val
         self.next = None
 
+# Class to create method which solves Linked List problems
 class Solution:
+    #Traversal method
     def print(self,linked_list):
         head = linked_list
         stack = []
@@ -16,6 +18,7 @@ class Solution:
             print(head.val,end=']')
             print()
 
+    # Adds a node at last
     def append(self,linked_list,val):
         head = linked_list
         if head.val is None:
@@ -26,6 +29,7 @@ class Solution:
         head.next = ListNode(val)
         return
     
+    # Connects the last node to a node at given index
     def connectNode(self,linked_list,index):
         head = linked_list
         if head.next is None:
@@ -43,7 +47,8 @@ class Solution:
         else:
             head.next = address
             return
-        
+
+    # Checks if a Linked List is circular or not 
     def checkCircular(self,linked_list):
         head = linked_list
         stack = []
