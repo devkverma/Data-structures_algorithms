@@ -100,15 +100,3 @@ class Solution:
 
 
 
-sol = Solution()
-
-t1 = TreeNode()
-
-sol.addElement(t1,5)
-sol.addElement(t1,1)
-sol.addElement(t1,6)
-sol.addElement(t1,10)
-
-sol.postorder_r(t1)
-print()
-print(sol.postorder(t1))
